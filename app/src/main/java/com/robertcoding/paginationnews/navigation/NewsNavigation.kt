@@ -16,6 +16,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.robertcoding.paginationnews.animation.NewzyLoadingAnimation
+import com.robertcoding.paginationnews.components.account.ManageAccountRoute
 import com.robertcoding.paginationnews.components.search.SearchScreen
 import com.robertcoding.paginationnews.components.latestnews.LatestNewzyRoute
 import com.robertcoding.paginationnews.components.singlearticle.ArticleWebViewScreen
@@ -77,7 +78,7 @@ fun NewsNavigation(modifier: Modifier = Modifier) {
                 }
             }
             entry<ManageAccount> {
-                Text("ManageAccount")
+               ManageAccountRoute()
             }
         }
     )

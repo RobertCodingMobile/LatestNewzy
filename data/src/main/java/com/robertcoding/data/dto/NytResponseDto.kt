@@ -1,6 +1,5 @@
 package com.robertcoding.data.dto
 
-import kotlinx.collections.immutable.ImmutableList
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

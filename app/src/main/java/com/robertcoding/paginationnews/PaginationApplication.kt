@@ -1,8 +1,7 @@
 package com.robertcoding.paginationnews
 
 import android.app.Application
-import com.robertcoding.data.network.networkModule
-import com.robertcoding.data.repository.repositoryModule
+import com.robertcoding.data.di.dataModule
 import com.robertcoding.paginationnews.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -15,7 +14,8 @@ class PaginationApplication : Application() {
         startKoin {
             androidContext(this@PaginationApplication)
             androidLogger(Level.ERROR)
-            modules(appModule, networkModule, repositoryModule)
+            modules(dataModule)
+            modules(appModule)
         }
     }
 }

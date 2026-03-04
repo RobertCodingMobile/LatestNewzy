@@ -46,11 +46,15 @@ dependencies {
 
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.common)
+    implementation(libs.koin.android)
 
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7")
     implementation(libs.androidx.core.ktx)
     // Serialization
     implementation(libs.kotlin.serialization.json)
+
+    //DataStore
+    implementation(libs.androidx.datastore.core)
+    implementation(libs.androidx.datastore.preferences)
     testImplementation(libs.junit)
 
 }

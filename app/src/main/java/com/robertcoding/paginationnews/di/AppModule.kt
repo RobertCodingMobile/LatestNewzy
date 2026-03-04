@@ -1,6 +1,7 @@
 package com.robertcoding.paginationnews.di
 
 import com.robertcoding.paginationnews.components.singlearticle.SingleArticleViewModel
+import com.robertcoding.paginationnews.settings.SettingsViewModel
 import com.robertcoding.paginationnews.viewmodel.LatestNewzyViewModel
 import com.robertcoding.paginationnews.viewmodel.MainViewModel
 import com.robertcoding.paginationnews.viewmodel.SearchViewModel
@@ -12,4 +13,5 @@ val appModule = module {
     viewModelOf(::SearchViewModel)
     viewModelOf(::LatestNewzyViewModel)
     viewModelOf(::SingleArticleViewModel)
+    viewModelOf(::SettingsViewModel)
 }

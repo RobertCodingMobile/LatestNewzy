@@ -22,6 +22,7 @@ ktor = "3.4.0"
 appcompat = "1.7.1"
 material = "1.13.0"
 animation = "1.10.3"
+datastoreCore = "1.2.0"
 
 
 [libraries]
@@ -84,6 +85,9 @@ kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagination" }
 androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "pagination" }
 
+# DataStore
+androidx-datastore-core = { group = "androidx.datastore", name = "datastore-core", version.ref = "datastoreCore" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastoreCore" }
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
