@@ -10,6 +10,12 @@ data object AppStarter: NavKey
 data object LatestNews: NavKey
 
 @Serializable
+data object NewzyRemoteRoute: NavKey
+
+@Serializable
+data object NewzyBookmarkRoute: NavKey
+
+@Serializable
 data object SearchNews: NavKey
 
 @Serializable

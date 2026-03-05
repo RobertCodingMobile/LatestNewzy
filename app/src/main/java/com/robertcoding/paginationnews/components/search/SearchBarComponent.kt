@@ -13,6 +13,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.rememberSearchBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.semantics
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,7 +30,8 @@ fun SearchBarComponent(
     placeholder: String = "Search NYT Articles..."
 ) {
     SearchBar(
-        modifier = modifier,
+        modifier = modifier
+            .testTag(tag = "SearchBar"),
         state = searchState,
         inputField = {
             SearchBarDefaults.InputField(
