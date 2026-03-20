@@ -51,7 +51,6 @@ class SearchViewModel(
         }
         .distinctUntilChanged()
         .flatMapLatest { query ->
-            println("AICI, QUERY: $query")
             articlesRepository.getArticles(query)
                 .catch { e ->
                     _uiState.update { UiState.Error(e.message ?: e.localizedMessage) }

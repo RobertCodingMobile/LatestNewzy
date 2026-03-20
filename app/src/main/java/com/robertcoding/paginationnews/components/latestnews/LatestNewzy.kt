@@ -270,18 +270,12 @@ private fun ArticleCard(
                     model = media.url,
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
+                    error = painterResource(id = R.drawable.ic_launcher_background),
+                    placeholder = painterResource(id = R.drawable.ic_launcher_foreground),
                     modifier = Modifier
                         .fillMaxSize()
                 )
-            } ?: run {
-                AsyncImage(
-                    model = painterResource(id = R.drawable.ic_launcher_background),
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .fillMaxSize()
-                )
-        }
+            }
 
             // Gradient overlay for text readability
             Box(

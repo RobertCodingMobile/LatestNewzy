@@ -55,12 +55,6 @@ class LatestNewzyViewModel(
         }
     }
 
-
-    override fun onCleared() {
-        super.onCleared()
-        println("AICI, LatestNewzyViewModel onCleared")
-    }
-
     // TODO: Create a basket of options for latest news.
 
 

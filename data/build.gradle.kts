@@ -1,6 +1,15 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ksp)
+}
+
+val localProperties = Properties()
+val localPropertiesFile: File? = rootProject.file("local.properties")
+if (localPropertiesFile?.exists() == true) {
+    localPropertiesFile.inputStream().use { localProperties.load(it) }
 }
 
 android {
@@ -31,6 +40,16 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        val apiKey = localProperties.getProperty("API_KEY")
+        buildConfigField("String", "API_KEY", "\"$apiKey\"")
+
+    }
 }
 
 dependencies {
@@ -47,6 +66,11 @@ dependencies {
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.common)
     implementation(libs.koin.android)
+
+    //Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
     implementation(libs.androidx.core.ktx)
     // Serialization
